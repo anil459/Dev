@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "1456438547be712dc284",
+  "name": "42877e7380b8e3c31d40",
   "position": {
-    "x": 104.07294832826749,
-    "y": 23.343465045592705,
-    "z": 1,
-    "height": 99.209726443769,
-    "width": 292.7659574468085,
-    "tabOrder": 1
+    "x": 396.838905775076,
+    "y": 13.617021276595745,
+    "z": 2,
+    "height": 59.331306990881458,
+    "width": 312.21884498480244,
+    "tabOrder": 2
   },
   "visual": {
     "visualType": "slicer",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "DimDate"
+                      "Entity": "DimProductCategory"
                     }
                   },
-                  "Property": "FiscalYear"
+                  "Property": "EnglishProductCategoryName"
                 }
               },
-              "queryRef": "DimDate.FiscalYear",
-              "nativeQueryRef": "FiscalYear",
+              "queryRef": "DimProductCategory.EnglishProductCategoryName",
+              "nativeQueryRef": "EnglishProductCategoryName",
               "active": true
             }
           ]
@@ -41,7 +41,7 @@
             "mode": {
               "expr": {
                 "Literal": {
-                  "Value": "'Dropdown'"
+                  "Value": "'Basic'"
                 }
               }
             }
@@ -54,18 +54,18 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "aa6d4baef9802bc75e0a",
+        "name": "4e71189c070fd338192b",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "DimDate"
+                "Entity": "DimProductCategory"
               }
             },
-            "Property": "FiscalYear"
+            "Property": "EnglishProductCategoryName"
           }
         },
-        "type": "Advanced"
+        "type": "Categorical"
       }
     ]
   }
