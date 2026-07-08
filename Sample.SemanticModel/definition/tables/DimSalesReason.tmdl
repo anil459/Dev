@@ -1,0 +1,49 @@
+table DimSalesReason
+	lineageTag: f7fcf9ce-7067-440e-a185-959edb127471
+
+	column SalesReasonKey
+		dataType: int64
+		formatString: 0
+		lineageTag: ed61c997-6050-43f7-b621-ab42cf401ca4
+		summarizeBy: count
+		sourceColumn: SalesReasonKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesReasonAlternateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: a8206284-b3c7-42fd-b54e-008a7dcdc0f2
+		summarizeBy: count
+		sourceColumn: SalesReasonAlternateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesReasonName
+		dataType: string
+		lineageTag: e7de243e-a566-4015-8274-e17eb2f1f27e
+		summarizeBy: none
+		sourceColumn: SalesReasonName
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesReasonReasonType
+		dataType: string
+		lineageTag: 36285cea-d3c4-4b56-8aa7-e2fab0538dee
+		summarizeBy: none
+		sourceColumn: SalesReasonReasonType
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimSalesReason = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("DESKTOP-H37JNPB\SQLEXPRESS"),
+				    AdventureWorksDW2025 = Source{[Name="AdventureWorksDW2025"]}[Data],
+				    dbo_DimSalesReason = AdventureWorksDW2025{[Schema="dbo",Item="DimSalesReason"]}[Data]
+				in
+				    dbo_DimSalesReason
+
+	annotation PBI_ResultType = Table
+
